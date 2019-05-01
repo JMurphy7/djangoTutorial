@@ -1,0 +1,11 @@
+{% extends "wiki/base.html" %}
+
+{% block content %}
+<div class="container">
+    {% block contentTitle %}
+        <h1>{{page.title}}</h1>
+    {% endblock %}
+    {{page.content}}
+    
+</div>
+{% endblock content %}
