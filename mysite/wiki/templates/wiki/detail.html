@@ -5,7 +5,9 @@
     {% block contentTitle %}
         <h1>{{page.title}}</h1>
     {% endblock %}
-    {{page.content}}
     
+    {{page.content}}
+    <hr>
+    <a><button class="btn btn-primary" href="{% url 'wiki:index' %}">Index</button></a> <!--come back to fix this later :D--->
 </div>
 {% endblock content %}

@@ -21,3 +21,7 @@ Elements of django:
 ### Some django termanology
 A project in django is the entire server.
 A site is a web app, its a single feature.
+
+Sidhi On youtube, does a video series
+
+Coding for entrepronours 'Try django 2.2' is a tutorial where he builds a blog, which is very simmilar to a wiki (this)

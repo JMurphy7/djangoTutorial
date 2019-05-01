@@ -7,10 +7,11 @@
 <h1 class="container">Wiki</h1>
 {% endblock %}
 <div class="container">
+    <button class="btn btn-primary">Create new page</button>
 {% if pages %}
     <ul class="list-group">
     {% for page in pages %}
-    <li class="list-group-item list-group-item-action"><a href="{% url 'wiki:detail' page.id %}">{{ page.title }}</a></li>
+    <li class="list-group-item list-group-item-action"><a href="{% url 'wiki:detail' page.title %}">{{ page.title }}</a></li>
     {% endfor %}
     </ul>
 {% else %}
