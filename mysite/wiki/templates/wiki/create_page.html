@@ -1,6 +1,7 @@
 {% extends "wiki/base.html" %}
 {% block content %}
 {% block contentTitle %}{{page_name}}{% endblock %}
-    <p>There is no content for this new page.</p>
+    <p>This page does not exist... but maybe... you can make it?</p>
     <a class="btn btn-primary" href="{% url 'wiki:edit_page' page_name %}">Create?</a>
+    <a class="btn btn-danger" href="{% url 'wiki:index' %}">Halt</a>
 {% endblock %}

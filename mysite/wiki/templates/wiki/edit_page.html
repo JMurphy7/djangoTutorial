@@ -7,6 +7,7 @@
 
     {% block contentTitle %}Edit {{page_name}}{% endblock %}
     <header><h3>{{page_name}}</h3></header>
+    <p>If you can't use markdown, get off my wiki. I dont care about you.</p>
     <a href="{% url 'wiki:index' %}"><button class="btn btn-primary">Index</button></a>
     <form method="post" action="{% url 'wiki:save_page' page_name %}">
     {% csrf_token %}
