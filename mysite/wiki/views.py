@@ -29,6 +29,7 @@ def edit_page(request, pk):
         content=''
     return render(request, 'wiki/edit_page.html',{ 'page_name':pk, 'content':content},)
 
+@login_required(login_url='wiki:login')
 def save_page(request, pk):
     content = request.POST["content"]
     try:
