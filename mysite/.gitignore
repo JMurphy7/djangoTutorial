@@ -74,3 +74,6 @@ settings.py
 
 .env
 db.sqlite3
+
+# Media File
+media

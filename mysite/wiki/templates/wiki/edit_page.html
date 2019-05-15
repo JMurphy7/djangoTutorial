@@ -4,7 +4,7 @@
 {% block content %}
 <!--    <script src="{% static 'tinymce/tinymce.min.js' %}"></script>
     <script>tinymce.init({forced_root_block : "", selector:'#id_content', plugins: 'autolink',remove_trailing_brs: false });</script> -->
-
+<div class="container">
     {% block contentTitle %}Edit {{page_name}}{% endblock %}
     <header><h3>{{page_name}}</h3></header>
     <p>Use <a href="https://github.com/adam-p/markdown-here/wiki/Markdown-Cheatsheet">markdown</a> for styling.</p>
@@ -15,4 +15,5 @@
         <input type="submit" name="Save" value="Save" class="btn btn-primary">
         <input type='submit' name="Cancel" value="Cancel" class="btn btn-secondary">
     </form>
+</div>
 {% endblock %}

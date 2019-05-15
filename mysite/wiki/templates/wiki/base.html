@@ -1,6 +1,6 @@
 {% load static %}
 <!DOCTYPE html>
-<hmtl>
+<hmtl class="wrapper">
 
     <head>
         <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
@@ -10,7 +10,7 @@
         <link rel="stylesheet" type="text/css" href="{% static 'wiki/style.css' %}?version=<%= Common.GetVersion%>" />
         
     </head>
-    <ul class="nav justify-content-center">
+    <ul class="nav justify-content-center card">
         <li class="nav-item">
             <a class="nav-link active" href="{% url 'wiki:index' %}">
                 <h1 class="container" id="wikiLogo" style="display:inline;">Wiki</h1>
@@ -30,9 +30,6 @@
                     <span class="sr-only">Loading...</span>
                 </div>
                 <div class="spinner-grow text-info" role="status">
-                    <span class="sr-only">Loading...</span>
-                </div>
-                <div class="spinner-grow text-light" role="status">
                     <span class="sr-only">Loading...</span>
                 </div>
                 <div class="spinner-grow text-dark" role="status">
