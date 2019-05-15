@@ -1,7 +1,6 @@
 from django import template
 import markdown, re
 
-
 wikiWordV2 = re.compile(r"\[\[([A-Za-z0-9_]+)\]\]")
 register = template.Library()
 

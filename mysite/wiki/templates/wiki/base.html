@@ -1,12 +1,50 @@
 {% load static %}
 <!DOCTYPE html>
 <hmtl>
+
     <head>
-        <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
-        <link rel="stylesheet" type="text/css" href="{% static 'wiki/style.css' %}">
+        <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
+            integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
         <link href="https://fonts.googleapis.com/css?family=Orbitron" rel="stylesheet">
+        <script src="Scripts/some.js?version=<%= Common.GetVersion%>" type="text/javascript"></script> <!-- javascript to stop browser from usign cached CSS document-->
+        <link rel="stylesheet" type="text/css" href="{% static 'wiki/style.css' %}?version=<%= Common.GetVersion%>" />
+        
     </head>
-    
+    <ul class="nav justify-content-center">
+        <li class="nav-item">
+            <a class="nav-link active" href="{% url 'wiki:index' %}">
+                <h1 class="container" id="wikiLogo" style="display:inline;">Wiki</h1>
+                <div class="spinner-grow text-success" role="status">
+                </div>
+
+                <div class="spinner-grow text-primary" role="status">
+                    <span class="sr-only">Loading...</span>
+                </div>
+                <div class="spinner-grow text-secondary" role="status">
+                    <span class="sr-only">Loading...</span>
+                </div>
+                <div class="spinner-grow text-danger" role="status">
+                    <span class="sr-only">Loading...</span>
+                </div>
+                <div class="spinner-grow text-warning" role="status">
+                    <span class="sr-only">Loading...</span>
+                </div>
+                <div class="spinner-grow text-info" role="status">
+                    <span class="sr-only">Loading...</span>
+                </div>
+                <div class="spinner-grow text-light" role="status">
+                    <span class="sr-only">Loading...</span>
+                </div>
+                <div class="spinner-grow text-dark" role="status">
+                    <span class="sr-only">Loading...</span>
+                </div>
+                <div>
+                    <span class="sr-only">Loading...</span>
+                </div>
+                </div>
+            </a>
+        </li>
+    </ul>
 
 
     <body>
