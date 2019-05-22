@@ -1,48 +1,53 @@
 {% load static %}
 <!DOCTYPE html>
 <hmtl class="wrapper">
-
     <head>
         <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
             integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
         <link href="https://fonts.googleapis.com/css?family=Orbitron" rel="stylesheet">
-        <script src="Scripts/some.js?version=<%= Common.GetVersion%>" type="text/javascript"></script> <!-- javascript to stop browser from usign cached CSS document-->
+        <script src="Scripts/some.js?version=<%= Common.GetVersion%>" type="text/javascript"></script>
+        <!-- javascript to stop browser from usign cached CSS document-->
         <link rel="stylesheet" type="text/css" href="{% static 'wiki/style.css' %}?version=<%= Common.GetVersion%>" />
-        
+
     </head>
-    <ul class="nav justify-content-center card">
+    <ul class="nav justify-content-center card flex-row">
+
         <li class="nav-item">
+            {% if user.is_authenticated%}
+            <a class="btn btn-outline-danger list-inline-item nav-link" href="{% url 'wiki:logout'%}">Logout</a>
+            {% else %}
+            <a class="btn btn-outline-primary list-inline-item nav-link" href="{% url 'wiki:login' %}">Login</a>
+            {% endif %}
+        </li>
+
+        <li class="nav-item mx-auto">
             <a class="nav-link active" href="{% url 'wiki:index' %}">
+
                 <h1 class="container" id="wikiLogo" style="display:inline;">Wiki</h1>
                 <div class="spinner-grow text-success" role="status">
                 </div>
 
-                <div class="spinner-grow text-primary" role="status">
+                <div class="spinner-grow text-primary" role="status" style="animation-delay: 100ms">
                     <span class="sr-only">Loading...</span>
                 </div>
-                <div class="spinner-grow text-secondary" role="status">
+                <div class="spinner-grow text-secondary" role="status" style="animation-delay: 200ms">
                     <span class="sr-only">Loading...</span>
                 </div>
-                <div class="spinner-grow text-danger" role="status">
+                <div class="spinner-grow text-danger" role="status" style="animation-delay: 300ms">
                     <span class="sr-only">Loading...</span>
                 </div>
-                <div class="spinner-grow text-warning" role="status">
+                <div class="spinner-grow text-warning" role="status" style="animation-delay: 400ms">
                     <span class="sr-only">Loading...</span>
                 </div>
-                <div class="spinner-grow text-info" role="status">
+                <div class="spinner-grow text-info" role="status" style="animation-delay: 500ms">
                     <span class="sr-only">Loading...</span>
                 </div>
-                <div class="spinner-grow text-dark" role="status">
+                <div class="spinner-grow text-dark" role="status" style="animation-delay: 600ms">
                     <span class="sr-only">Loading...</span>
-                </div>
-                <div>
-                    <span class="sr-only">Loading...</span>
-                </div>
                 </div>
             </a>
         </li>
     </ul>
-
 
     <body>
         {% block content %} There is no content available... :/ {% endblock content %}

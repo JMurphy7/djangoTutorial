@@ -3,6 +3,9 @@ from .models import Page, UserFileUpload
 from django.shortcuts import render, redirect
 from django.contrib.auth.decorators import login_required
 from .forms import UploadFileForm
+import logging
+
+logger = logging.getLogger(__name__)
 
 
 class IndexView(generic.ListView):
@@ -56,4 +59,3 @@ def upload_file(request):
     context['form'] = form
     context['files'] = UserFileUpload.objects.all().order_by('upload')
     return render(request, 'wiki/upload.html', context)
-    
