@@ -22,6 +22,8 @@ class DetailView(generic.DetailView):
 def view_page(request, pk):
     try:
         page = Page.objects.get(pk=pk)
+        page.counter += 1
+        page.save()
         return render(request, 'wiki/detail.html', {'page': page})
     except Page.DoesNotExist:
         return render(request, 'wiki/create_page.html', {'page_name': pk})
