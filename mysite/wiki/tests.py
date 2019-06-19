@@ -1,6 +1,6 @@
 from django.test import TestCase
 from myapp.models import Page
-# Create your tests here.
+# These are tests that allow the server to be tested and ensure it is functioning as expected.
 
 class pageTests(TestCase):
 

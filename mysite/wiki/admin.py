@@ -1,9 +1,8 @@
 from django.contrib import admin
 
-# Register your models here.
 
 from .models import Page, UserFileUpload
 
-admin.site.register(Page)
+admin.site.register(Page)                   # Models are defined here, this makes them useable.
 
 admin.site.register(UserFileUpload)

@@ -1,6 +1,7 @@
 from django.urls import path, include
 
 from . import views
+# This piece of code allows the urls to go where they are expected to when the user inserts the page they want to see.
 app_name = 'wiki'
 
 urlpatterns = [

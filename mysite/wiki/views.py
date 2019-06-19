@@ -6,8 +6,8 @@ from .forms import UploadFileForm
 from django.db.models import F
 import logging
 
-logger = logging.getLogger(__name__)
-
+logger = logging.getLogger(__name__) # Allows us to keep a log of which pages are being requested. 
+# Views are the like child clasess to the models, they build off the page classes and create the data structures that make up specific pages.
 
 class IndexView(generic.ListView):
     template_name = 'wiki/index.html'
@@ -30,7 +30,7 @@ def view_page(request, pk):
     except Page.DoesNotExist:
         return render(request, 'wiki/create_page.html', {'page_name': pk})
 
-@login_required(login_url='wiki:login')
+@login_required(login_url='wiki:login') # Authenticates the page, people cannot access that page without being logged in.
 def edit_page(request, pk):
     try:
         page= Page.objects.get(pk=pk)
@@ -40,7 +40,7 @@ def edit_page(request, pk):
     return render(request, 'wiki/edit_page.html',{ 'page_name':pk, 'content':content},)
 
 @login_required(login_url='wiki:login')
-def save_page(request, pk):
+def save_page(request, pk):                                  # This page is vulnerable to XSS attacks, alongside view page. If this were on a larger scale, it would be something i would patch out by not allowing JavaScript to be saved as JavaScript. It would be saved as text.
     content = request.POST["content"]
     try:
         page = Page.objects.get(pk=pk)
@@ -51,7 +51,7 @@ def save_page(request, pk):
         page.save()
     return redirect(page)
 
-@login_required(login_url='wiki:login')
+@login_required(login_url='wiki:login')                          # No proofing here, technically a security risk, but that could be handled by having the appropriate software in the server itself to check files.
 def upload_file(request):
     context = {}
     if request.method == 'POST':
