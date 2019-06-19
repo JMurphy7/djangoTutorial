@@ -54,8 +54,11 @@
     </body>
     <footer> 
         {% if user.is_authenticated%}
-        Hello {{ request.user.username }}! You are using {{ request.META.HTTP_USER_AGENT }} {{ request.META.REMOTE_ADDR }} to browse this site.
+        Hello {{ request.user.username }}! You are using {{ request.META.HTTP_USER_AGENT }} {{ request.META.REMOTE_ADDR }} to browse this site. 
         {% else %}
         Hello! You are using {{ request.META.HTTP_USER_AGENT }} {{ request.META.REMOTE_ADDR }} to browse this site.
-        {% endif %}</footer>
+        {% endif %}
+        <p id="SCREEN_RESOLUTION"></p> <!--Had to be done in javascript, as there didn't seem to be any alternative that i could find.-->
+    <script>var a = "You screen resolution is " + screen.width + " X " + screen.height; document.getElementById("SCREEN_RESOLUTION").innerHTML = a;</script>
+    </footer>
 </html>
